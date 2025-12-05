@@ -30,7 +30,7 @@ public:
         unordered_map<int,vector<int>>mp;
         vector<int>indegree(numCourses, 0);
         for(auto it : prerequisites ){
-            int a= it[0], b=it[1];//b is dependent on a OR a->b
+            int b= it[0], a=it[1];//b is dependent on a OR a->b
             mp[a].push_back(b);
             indegree[b]++;
         }
