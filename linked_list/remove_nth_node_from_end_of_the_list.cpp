@@ -1,0 +1,21 @@
+//lc
+ // second to land one node before the node to delete. hence n+1 gap
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        ListNode* dummy = new ListNode(0, head);
+        ListNode* first= dummy;
+        ListNode* second = dummy;
+        for(int i=0;i<n+1;i++){
+            first= first->next;
+        }
+        if(!first) return head->next;
+        while(first){
+            first=first->next;
+            second=second->next;
+        }
+        second->next= second->next->next;
+        return dummy->next;
+        
+    }
+};
